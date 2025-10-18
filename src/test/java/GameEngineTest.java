@@ -83,6 +83,7 @@ public class GameEngineTest {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void testMaxAttemptsReached() {
         engine.setTarget(50);
         for (int i = 0; i < 10; i++) {
@@ -140,6 +141,8 @@ public class GameEngineTest {
     }
 
 >>>>>>> 5bc166a (Fix test code after merge)
+=======
+>>>>>>> dev
     public void testHintVeryClose() {
         engine.setTarget(50);
         engine.makeGuess(60);
@@ -207,6 +210,9 @@ public class GameEngineTest {
         }
         GuessResult result = engine.makeGuess(55);
         assertFalse(result.getHint().isEmpty());
+<<<<<<< HEAD
 >>>>>>> 47cbddd (Add hint system to show proximity after 3 attempts)
+=======
+>>>>>>> dev
     }
 }
