@@ -10,7 +10,7 @@ public class GameUI {
     }
 
     public void start() {
-        while (!engine.isGameWon()) {
+        while (!engine.isGameWon() && !engine.isGameOver()) {
             System.out.print("Guess a number between " + engine.getMin() + " and " + engine.getMax() + ": ");
             int guess = Utils.readInt(scanner);
 
