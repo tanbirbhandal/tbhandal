@@ -7,15 +7,8 @@ public class GameEngine {
     private int attempts;
     private boolean gameWon;
     private boolean userQuit;
-<<<<<<< HEAD
-<<<<<<< HEAD
     private boolean gameOver;
-=======
     private boolean hintsEnabled;
->>>>>>> 47cbddd (Add hint system to show proximity after 3 attempts)
-=======
-    private boolean hintsEnabled;
->>>>>>> dev
 
     public GameEngine(int min, int max) {
         this.min = min;
@@ -23,15 +16,8 @@ public class GameEngine {
         this.attempts = 0;
         this.gameWon = false;
         this.userQuit = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
         this.gameOver = false;
-=======
         this.hintsEnabled = true;
->>>>>>> 47cbddd (Add hint system to show proximity after 3 attempts)
-=======
-        this.hintsEnabled = true;
->>>>>>> dev
         reset();
     }
 
@@ -46,41 +32,23 @@ public class GameEngine {
         if (guess == target) {
             gameWon = true;
             return new GuessResult(true, "Correct! You guessed it in " + attempts + " attempts.", attempts);
-<<<<<<< HEAD
-<<<<<<< HEAD
         } 
         
         if (attempts >= MAX_ATTEMPTS) {
             gameOver = true;
             return new GuessResult(false, "Game Over! You've used all " + MAX_ATTEMPTS + " attempts. The number was " + target + ".", attempts);
-=======
-=======
->>>>>>> dev
-        } else {
-            String hint = getHint(guess);
-            GuessResult result;
-            if (guess < target) {
-                result = new GuessResult(false, "Too low! Try a higher number.", attempts);
-            } else {
-                result = new GuessResult(false, "Too high! Try a lower number.", attempts);
-            }
-            result.setHint(hint);
-            return result;
-<<<<<<< HEAD
->>>>>>> 47cbddd (Add hint system to show proximity after 3 attempts)
-=======
->>>>>>> dev
         }
-        
+            
         int remaining = MAX_ATTEMPTS - attempts;
         GuessResult result;
-
- 
         if (guess < target) {
-            result = new GuessResult(false, "Too low!", attempts);
+            result = new GuessResult(false, "Too low! Try a higher number.", attempts);
         } else {
-            result = new GuessResult(false, "Too high!", attempts);
+            result = new GuessResult(false, "Too high! Try a lower number.", attempts);
         }
+        String hint = getHint(guess);
+        result.setHint(hint);
+ 
         result.setRemainingAttempts(remaining);
         return result;
     }
